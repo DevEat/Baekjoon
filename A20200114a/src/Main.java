@@ -1,4 +1,4 @@
-# 1712번 - 손익분기점
+//1712번 - 손익분기점
 import java.util.Scanner;
 
 public class Main {
