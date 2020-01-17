@@ -11,19 +11,14 @@ int main()
 
 	std::cin >> fix;
 	before = fix;
-	while(1)
-	{
-        cycle++;
+	do{
+        	cycle++;
 		digit = before / 10;
 		decimal = before % 10;
 
 		after = (decimal * 10) + ((digit + decimal) % 10);
-
-		if (fix == after)
-			break;
-
 		before = after;
-	}
+	}while(fix != after)
 
 	std::cout << cycle;
 
