@@ -5,12 +5,12 @@
 using namespace std;
 
 bool c[10];
-int sequence[10];
+int sequence[10] = {1};
 
 void go(int index, int n, int m) {
 
-    if(index == m) {
-        for(int i=0; i<m; i++) {
+    if(m < index) {
+        for(int i=1; i<=m; i++) {
             cout << sequence[i] << " ";
         }
         cout << "\n";
@@ -34,7 +34,7 @@ int main() {
     int n, m;
 
     cin >> n >> m;
-    go(0, n, m);
+    go(1, n, m);
 
     return 0;
 }
