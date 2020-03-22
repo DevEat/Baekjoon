@@ -4,12 +4,13 @@
 #include <iostream>
 using namespace std;
 
-int sequence[10];
+bool c[10];
+int sequence[10] = {1};
 
 void go(int index, int n, int m) {
 
-    if(index == m) {
-        for(int i=0; i<m; i++) {
+    if(m < index) {
+        for(int i=1; i<=m; i++) {
             cout << sequence[i] << " ";
         }
         cout << "\n";
@@ -18,16 +19,25 @@ void go(int index, int n, int m) {
     }
 
     for(int i=1; i<=n; i++) {
+        if(c[i])
+            continue;
+
+        c[i] = true;
         sequence[index] = i;
         go(index+1, n, m);
+        c[i] = false;
     }
 }
 
+
 int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+
     int n, m;
 
     cin >> n >> m;
-    go(0, n, m);
+    go(1, n, m);
 
     return 0;
 }
